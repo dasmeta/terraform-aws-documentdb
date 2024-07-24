@@ -9,7 +9,7 @@ module "cw_alerts" {
   alerts = [
     {
       name   = "DocumentDB: ${var.name} CPUUtilization"
-      source = "AWS/RDS/CPUUtilization"
+      source = "AWS/DocDB/CPUUtilization"
       filters = {
         DBClusterIdentifier = var.name
       }
