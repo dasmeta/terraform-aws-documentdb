@@ -35,7 +35,7 @@ module "cw_alerts" {
         DBClusterIdentifier = var.name
       }
       period    = try(var.alarms.custom_values.memory.period, "1800")
-      threshold = try(var.alarms.custom_values.memory.threshold,2)
+      threshold = try(var.alarms.custom_values.memory.threshold, 2)
       equation  = try(var.alarms.custom_values.memory.equation, "lt")
       statistic = try(var.alarms.custom_values.memory.statistic, "avg")
     },

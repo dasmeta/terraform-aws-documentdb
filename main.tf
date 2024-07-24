@@ -1,8 +1,8 @@
 module "documentdb_cluster" {
-  source = "cloudposse/documentdb-cluster/aws"
+  source  = "cloudposse/documentdb-cluster/aws"
   version = "0.26.0"
 
-  name = var.name
+  name                            = var.name
   cluster_size                    = var.cluster_size
   master_username                 = var.master_username
   master_password                 = var.master_password
