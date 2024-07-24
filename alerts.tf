@@ -8,7 +8,7 @@ module "cw_alerts" {
 
   alerts = [
     {
-      name   = "DocumentDB ${var.name} CPUUtilization"
+      name   = "DocumentDB: ${var.name} CPUUtilization"
       source = "AWS/RDS/CPUUtilization"
       filters = {
         DBClusterIdentifier = var.name
@@ -18,7 +18,7 @@ module "cw_alerts" {
       period    = try(var.alarms.custom_values.cpu.period, "300")
     },
     {
-      name   = "DocumentDB ${var.name} EBSIOBalance%"
+      name   = "DocumentDB: ${var.name} EBSIOBalance%"
       source = "AWS/DocDB/EBSIOBalance%"
       filters = {
         DBClusterIdentifier = var.name
@@ -29,7 +29,7 @@ module "cw_alerts" {
       statistic = try(var.alarms.custom_values.ebs.IObalance.statistic, "avg")
     },
     {
-      name   = "DocumentDB ${var.name} FreeableMemory"
+      name   = "DocumentDB: ${var.name} FreeableMemory"
       source = "AWS/DocDB/FreeableMemory"
       filters = {
         DBClusterIdentifier = var.name
@@ -40,7 +40,7 @@ module "cw_alerts" {
       statistic = try(var.alarms.custom_values.memory.statistic, "avg")
     },
     {
-      name   = "DocumentDB ${var.name} ReadLatency"
+      name   = "DocumentDB: ${var.name} ReadLatency"
       source = "AWS/DocDB/ReadLatency"
       filters = {
         DBClusterIdentifier = var.name
@@ -51,7 +51,7 @@ module "cw_alerts" {
       statistic = try(var.alarms.custom_values.network.read.statistic, "avg")
     },
     {
-      name   = "DocumentDB ${var.name} WriteLatency"
+      name   = "DocumentDB: ${var.name} WriteLatency"
       source = "AWS/DocDB/WriteLatency"
       filters = {
         DBClusterIdentifier = var.name
@@ -62,7 +62,7 @@ module "cw_alerts" {
       statistic = try(var.alarms.custom_values.network.write.statistic, "avg")
     },
     {
-      name   = "DocumentDB ${var.name} DatabaseConnections"
+      name   = "DocumentDB: ${var.name} DatabaseConnections"
       source = "AWS/DocDB/DatabaseConnections"
       filters = {
         DBClusterIdentifier = var.name
@@ -73,7 +73,7 @@ module "cw_alerts" {
       statistic = try(var.alarms.custom_values.connections.statistic, "avg")
     },
     {
-      name   = "DocumentDB ${var.name} FreeStorageSpace"
+      name   = "DocumentDB: ${var.name} FreeStorageSpace"
       source = "AWS/DocDB/FreeStorageSpace"
       filters = {
         DBClusterIdentifier = var.name
